@@ -45,7 +45,7 @@ export function Hero() {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-center">
           <Image
-            src="/hero.jpg"
+            src="/portfolio/hero.jpg"
             alt="Hero image"
             width={500}
             height={500}
