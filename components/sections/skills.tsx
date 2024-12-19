@@ -36,10 +36,10 @@ const skillsData = [
   {
     title: "Cloud Services",
     icon: <Cloud className="w-6 h-6" />,
-    skills: ["AWS: EC2, IAM, S3, Lambda, CloudFront", "DigitalOcean"]
+    skills: ["AWS EC2", "AWS IAM", "AWS S3", "AWS Lambda", "AWS CloudFront", "DigitalOcean"]
   },
   {
-    title: "Programming & Scripting",
+    title: "Programming",
     icon: <Terminal className="w-6 h-6" />,
     skills: ["Python", "JavaScript/TypeScript", "Bash", "PHP"]
   },
@@ -58,7 +58,7 @@ const skillsData = [
 export function Skills() {
   return (
     <section className="py-12" id="skills">
-      <div className="flex container flex-row flex-wrap justify-center items-center mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex container flex-col flex-wrap justify-center items-center mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-8 enhanced-glitch" data-text="Skills">Skills</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {skillsData.map((category, index) => (

@@ -41,7 +41,7 @@ export function Hero() {
   }, [displayText, isDeleting, titleIndex, titles]);
 
   return (
-    <section className="pt-24 pb-8" id="home">
+    <section className="pt-8 md:pt-24 pb-8" id="home">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-center">
           <Image
@@ -49,7 +49,7 @@ export function Hero() {
             alt="Hero image"
             width={500}
             height={500}
-            className="w-48 h-48 rounded-full shadow-lg"
+            className="w-48 h-48 rounded-full shadow-lg mb-4 md:mb-0"
           />
           <div className="md:w-2/3 text-center md:text-left pl-0 md:pl-8">
             <h1
