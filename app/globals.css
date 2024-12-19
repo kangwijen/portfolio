@@ -73,8 +73,224 @@ body {
 
 .matrix-bg {
   background-color: rgb(4, 9, 10);
-  background-image: 
-    linear-gradient(rgba(0, 255, 100, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 100, 0.05) 1px, transparent 1px);
+  background-image: linear-gradient(
+      rgba(0, 255, 100, 0.05) 2px,
+      transparent 2px
+    ),
+    linear-gradient(90deg, rgba(0, 255, 100, 0.05) 2px, transparent 1px);
   background-size: 20px 20px;
+}
+
+.enhanced-glitch {
+  position: relative;
+  color: #00ff64;
+  text-shadow: 0 0 5px #00ff64;
+  animation: enhancedGlitch 2s infinite;
+}
+
+.enhanced-glitch::before,
+.enhanced-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.enhanced-glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00ff;
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.enhanced-glitch::after {
+  left: -2px;
+  text-shadow: 2px 0 #00ffff;
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes pulse {
+  0% {
+    text-shadow:
+      0 0 5px #00ff64,
+      0 0 10px #00ff64,
+      0 0 15px #00ff64,
+      0 0 20px #00ff64;
+  }
+  50% {
+    text-shadow:
+      0 0 10px #00ff64,
+      0 0 20px #00ff64,
+      0 0 30px #00ff64,
+      0 0 40px #00ff64;
+  }
+  100% {
+    text-shadow:
+      0 0 5px #00ff64,
+      0 0 10px #00ff64,
+      0 0 15px #00ff64,
+      0 0 20px #00ff64;
+  }
+}
+
+@keyframes enhancedGlitch {
+  0%,
+  100% {
+    text-shadow:
+      0.05em 0 0 #00fffc,
+      -0.03em -0.04em 0 #fc00ff,
+      0.025em 0.04em 0 #fffc00;
+    transform: skew(0.15deg);
+  }
+  25% {
+    text-shadow:
+      -0.05em -0.025em 0 #00fffc,
+      0.025em 0.035em 0 #fc00ff,
+      -0.05em -0.05em 0 #fffc00;
+    transform: skew(-0.25deg);
+  }
+  50% {
+    text-shadow:
+      0.05em 0.035em 0 #00fffc,
+      0.03em 0 0 #fc00ff,
+      0 -0.04em 0 #fffc00;
+    transform: skew(0.4deg);
+  }
+  75% {
+    text-shadow:
+      -0.05em 0 0 #00fffc,
+      -0.025em -0.04em 0 #fc00ff,
+      -0.04em -0.025em 0 #fffc00;
+    transform: skew(-0.15deg);
+  }
+}
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip-path: inset(40% 0 61% 0);
+  }
+  20% {
+    clip-path: inset(92% 0 1% 0);
+  }
+  40% {
+    clip-path: inset(43% 0 1% 0);
+  }
+  60% {
+    clip-path: inset(25% 0 58% 0);
+  }
+  80% {
+    clip-path: inset(54% 0 7% 0);
+  }
+  100% {
+    clip-path: inset(58% 0 43% 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip-path: inset(10% 0 61% 0);
+  }
+  20% {
+    clip-path: inset(82% 0 31% 0);
+  }
+  40% {
+    clip-path: inset(23% 0 41% 0);
+  }
+  60% {
+    clip-path: inset(75% 0 18% 0);
+  }
+  80% {
+    clip-path: inset(14% 0 77% 0);
+  }
+  100% {
+    clip-path: inset(48% 0 33% 0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.glowing-hacker-text {
+  color: #00ff64;
+  text-shadow:
+    0 0 5px #00ff64,
+    0 0 10px #00ff64,
+    0 0 15px #00ff64,
+    0 0 20px #00ff64;
+  animation: pulse 5s ease-in-out infinite;
+}
+
+.glitching-hacker-text {
+  color: #00ff64;
+  text-shadow:
+    0 0 5px #00ff64,
+    0 0 10px #ff00ff,
+    0 0 15px #00ffff,
+    0 0 20px #ff0000;
+  animation:
+    pulse 3s ease-in-out infinite,
+    glitch 1s steps(1) infinite;
+  position: relative;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow:
+      0.1em 0 0 #00fffc,
+      -0.1em -0.1em 0 #fc00ff,
+      0.1em 0.1em 0 #fffc00;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(0);
+  }
+  20% {
+    text-shadow:
+      -0.1em 0 0 #00fffc,
+      0.1em 0.1em 0 #fc00ff,
+      -0.1em -0.1em 0 #fffc00;
+    clip-path: polygon(0 45%, 100% 45%, 100% 100%, 0 100%);
+    transform: translate(-0.2em, 0.1em);
+  }
+  40% {
+    text-shadow:
+      0.1em 0 0 #00fffc,
+      -0.1em 0 0 #fc00ff,
+      0.1em -0.1em 0 #fffc00;
+    clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+    transform: translate(0.2em, -0.1em);
+  }
+  60% {
+    text-shadow:
+      -0.1em 0 0 #00fffc,
+      0.1em 0.1em 0 #fc00ff,
+      0 -0.1em 0 #fffc00;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transform: translate(0);
+  }
+  80% {
+    text-shadow:
+      0.1em -0.1em 0 #00fffc,
+      -0.1em 0 0 #fc00ff,
+      0 0.1em 0 #fffc00;
+    clip-path: polygon(0 80%, 100% 80%, 100% 100%, 0 100%);
+    transform: translate(-0.1em, 0.1em);
+  }
+  100% {
+    text-shadow:
+      0.1em 0 0 #00fffc,
+      -0.1em -0.1em 0 #fc00ff,
+      0.1em 0.1em 0 #fffc00;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(0);
+  }
+}
+
+.text-neon {
+  color: #00ff64;
 }
