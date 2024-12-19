@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Button } from "../../components/ui/button";
 import Link from "next/link";
-import { Github, Linkedin, Earth } from "lucide-react";
+import { SiGithub, SiLinkedin, SiWordpress } from "react-icons/si";
 
 export function Hero() {
   const [displayText, setDisplayText] = useState("");
@@ -71,7 +71,7 @@ export function Hero() {
             <div className="flex justify-center md:justify-start space-x-4">
               <Button asChild variant="outline" className="text-neon">
                 <Link href="https://github.com/kangwijen" target="_blank">
-                  <Github /> GitHub
+                  <SiGithub /> GitHub
                 </Link>
               </Button>
               <Button asChild variant="outline" className="text-neon">
@@ -79,12 +79,12 @@ export function Hero() {
                   href="https://www.linkedin.com/in/anthony-sai-richardo-346061235/"
                   target="_blank"
                 >
-                  <Linkedin /> LinkedIn
+                  <SiLinkedin /> LinkedIn
                 </Link>
               </Button>
               <Button asChild variant="outline" className="text-neon">
                 <Link href="https://www.anthonysr.my.id/" target="_blank">
-                  <Earth /> Blog
+                  <SiWordpress /> Blog
                 </Link>
               </Button>
             </div>

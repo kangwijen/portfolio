@@ -4,6 +4,8 @@ import { Skills } from "@/components/sections/skills";
 import { Projects } from "@/components/sections/projects";
 import { Awards } from "@/components/sections/awards";
 import { Contact } from "@/components/sections/contact";
+import { Footer } from "@/components/sections/footer";
+import { Stack } from "@/components/sections/stack";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <Projects />
       <Awards />
       <Contact />
+      <Stack />
+      <Footer />
     </div>
   );
 }

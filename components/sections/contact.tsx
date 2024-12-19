@@ -22,7 +22,7 @@ export function Contact() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -44,7 +44,9 @@ export function Contact() {
           <CardHeader>
             <div className="flex items-center gap-2 mb-2">
               <Mail className="w-5 h-5 text-neon" />
-              <CardTitle className="glowing-hacker-text">Get in Touch</CardTitle>
+              <CardTitle className="glowing-hacker-text">
+                Get in Touch
+              </CardTitle>
             </div>
           </CardHeader>
           <CardContent>
@@ -56,7 +58,7 @@ export function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="border-neon"
+                  className="border-neon text-neon"
                 />
               </div>
               <div>
@@ -67,7 +69,7 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="border-neon"
+                  className="border-neon text-neon"
                 />
               </div>
               <div>
@@ -77,7 +79,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="min-h-[150px] border-neon"
+                  className="min-h-[150px] border-neon text-neon"
                 />
               </div>
               <Button
