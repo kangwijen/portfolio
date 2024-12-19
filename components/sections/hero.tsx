@@ -7,7 +7,11 @@ import { Github, Linkedin, Earth } from "lucide-react";
 
 export function Hero() {
   const [displayText, setDisplayText] = useState("");
-  const titles = ["Cyber Security Enthusiast", "Web Developer", "OSINT Enthusiast"];
+  const titles = [
+    "Cyber Security Enthusiast",
+    "Web Developer",
+    "OSINT Enthusiast",
+  ];
   const [titleIndex, setTitleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -15,17 +19,17 @@ export function Hero() {
     const currentTitle = titles[titleIndex];
     const updateText = () => {
       if (!isDeleting) {
-        setDisplayText(current => 
-          currentTitle.substring(0, current.length + 1)
+        setDisplayText((current) =>
+          currentTitle.substring(0, current.length + 1),
         );
         if (displayText === currentTitle) {
           setTimeout(() => setIsDeleting(true), 1500);
         }
       } else {
-        setDisplayText(current => 
-          currentTitle.substring(0, current.length - 1)
+        setDisplayText((current) =>
+          currentTitle.substring(0, current.length - 1),
         );
-        if (displayText === '') {
+        if (displayText === "") {
           setIsDeleting(false);
           setTitleIndex((current) => (current + 1) % titles.length);
         }
@@ -55,7 +59,8 @@ export function Hero() {
               Anthony Sai Richardo
             </h1>
             <h2 className="text-2xl glowing-hacker-text mb-4">
-              {displayText}<span className="animate-blink">|</span>
+              {displayText}
+              <span className="animate-blink">|</span>
             </h2>
             <p className="text-lg text-neon mb-4 text-pretty">
               Active cyber security undergraduate from BINUS University with a
@@ -64,21 +69,24 @@ export function Hero() {
               intelligence, and computer networking.
             </p>
             <div className="flex justify-center md:justify-start space-x-4">
-                <Button asChild variant="outline" className="text-neon">
-                    <Link href="https://github.com/kangwijen" target="_blank">
-                        <Github/> GitHub
-                    </Link>
-                </Button>
-                <Button asChild variant="outline" className="text-neon">
-                    <Link href="https://www.linkedin.com/in/anthony-sai-richardo-346061235/" target="_blank">
-                        <Linkedin/> LinkedIn
-                    </Link>
-                </Button>
-                <Button asChild variant="outline" className="text-neon">
-                    <Link href="https://www.anthonysr.my.id/" target="_blank">
-                        <Earth/> Blog
-                    </Link>
-                </Button>
+              <Button asChild variant="outline" className="text-neon">
+                <Link href="https://github.com/kangwijen" target="_blank">
+                  <Github /> GitHub
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="text-neon">
+                <Link
+                  href="https://www.linkedin.com/in/anthony-sai-richardo-346061235/"
+                  target="_blank"
+                >
+                  <Linkedin /> LinkedIn
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="text-neon">
+                <Link href="https://www.anthonysr.my.id/" target="_blank">
+                  <Earth /> Blog
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
