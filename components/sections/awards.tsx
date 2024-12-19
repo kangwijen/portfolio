@@ -1,7 +1,7 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code2, Trophy } from "lucide-react";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Trophy } from "lucide-react";
 
 const awardsData = [
   {

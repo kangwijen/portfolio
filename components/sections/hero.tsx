@@ -1,17 +1,17 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Button } from "../../components/ui/button";
 import Link from "next/link";
 import { SiGithub, SiLinkedin, SiWordpress } from "react-icons/si";
 
 export function Hero() {
   const [displayText, setDisplayText] = useState("");
-  const titles = [
+  const titles = useMemo(() => [
     "Cyber Security Enthusiast",
     "Web Developer",
     "OSINT Enthusiast",
-  ];
+  ], []);
   const [titleIndex, setTitleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 

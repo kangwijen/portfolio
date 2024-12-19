@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code2, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 
 const projectsData = [
   {
