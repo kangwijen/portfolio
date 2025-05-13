@@ -83,7 +83,7 @@ export function Hero() {
                 </Link>
               </Button>
               <Button asChild variant="outline" className="text-neon">
-                <Link href="https://www.anthonysr.my.id/" target="_blank">
+                <Link href="https://www.kangwijen.my.id/" target="_blank">
                   <SiWordpress /> Blog
                 </Link>
               </Button>
